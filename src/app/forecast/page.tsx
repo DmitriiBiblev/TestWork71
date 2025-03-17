@@ -1,6 +1,6 @@
 export default function Forecast() {
   return (
-    <div>
+    <div className="container">
       Forecast
     </div>
   );
