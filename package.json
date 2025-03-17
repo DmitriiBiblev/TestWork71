@@ -22,19 +22,9 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.2.2",
-    "husky": "^9.1.7",
-    "lint-staged": "^15.5.0",
     "sass": "^1.85.1",
     "stylelint-config-standard-scss": "^14.0.0",
     "stylelint-order": "^6.0.4",
     "typescript": "^5"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "**/*.{scss,css}": "npm run lint:styles:fix"
   }
 }
