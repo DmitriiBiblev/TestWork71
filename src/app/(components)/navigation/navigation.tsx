@@ -1,5 +1,6 @@
 "use client";
 
+import cn from 'classnames';
 import Link from 'next/link';
 import { usePathname } from "next/navigation";
 import { NAV_ITEMS } from './nav-items.data';
@@ -12,7 +13,7 @@ export const Navigation = () => {
       {
         NAV_ITEMS.map(({ rout, text }) => (
           <Link
-            className={ `nav-item nav-link ${ pathname === rout ? 'active' : '' }` }
+            className={ cn('nav-item nav-link', { 'active': pathname === rout }) }
             href={ rout }
             key={ rout }
           >
