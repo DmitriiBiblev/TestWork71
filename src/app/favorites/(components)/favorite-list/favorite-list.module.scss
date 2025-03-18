@@ -1,0 +1,36 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.city {
+  background: var(--bs-dark-rgb);
+  padding: 10px 20px;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 8px;
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.name {
+  width: max-content;
+  color: #fff;
+  text-decoration: none;
+  transition: color .2s;
+
+  &:hover {
+    color: #4c1969;
+  }
+}
+
+.degrees {
+  text-align: center;
+}
+
+.btn {
+  width: max-content;
+  justify-self: end;
+}
