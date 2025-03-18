@@ -1,0 +1,31 @@
+.error {
+  border: 1px solid red !important;
+}
+
+.errorText {
+  font-size: 0.875rem;
+  color: red;
+  margin-top: -10px;
+}
+
+.list {
+  width: 100%;
+  left: 0;
+  position: absolute;
+  top: 38px;
+  transform: translateY(4px);
+}
+
+.lisItem {
+  cursor: pointer;
+}
+
+.listContainer {
+  background: var(--bs-list-group-bg);
+  padding: 20px;
+  border: var(--bs-list-group-border-width) solid var(--bs-list-group-border-color);
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "#/(styles)/globals.scss";
+import "./(styles)/globals.scss";
 import React from 'react';
 import { Header } from "./(components)";
 
@@ -14,6 +14,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
     <html lang="en">
     <body>
     <Header />
+
     { children }
     </body>
     </html>
