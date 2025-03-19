@@ -27,8 +27,6 @@ export const useFavorites = create<Store>((set, get) => ({
   setFavoriteCities: () => {
     const cities: IFavoriteCity[] = JSON.parse(localStorage.getItem('favorites') ?? '[]');
 
-    console.log(localStorage.getItem('favorites'));
-
     set({ cities });
   },
 

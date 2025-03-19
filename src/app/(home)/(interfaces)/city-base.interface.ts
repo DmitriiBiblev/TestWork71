@@ -1,50 +1,19 @@
+import { IClouds, ICoordinates, IMain, IWeather, IWind } from '#shared';
+
 export interface ICityBase {
   id: number;
   name: string;
-  coord: Coordinates;
-  main: Main;
+  coord: ICoordinates;
+  main: IMain;
   dt: number;
-  wind: Wind;
+  wind: IWind;
   sys: Sys;
-  clouds: Clouds;
-  weather: Weather[];
-}
-
-interface Coordinates {
-  lon: number;
-  lat: number;
-}
-
-interface Main {
-  temp: number;
-  feels_like: number;
-  temp_min: number;
-  temp_max: number;
-  pressure: number;
-  humidity: number;
-  sea_level: number;
-  grnd_level: number;
-}
-
-interface Wind {
-  speed: number;
-  deg: number;
-  gust?: number;
+  clouds: IClouds;
+  weather: IWeather[];
 }
 
 interface Sys {
   country: string;
   sunrise: number;
   sunset: number;
-}
-
-interface Clouds {
-  all: number;
-}
-
-interface Weather {
-  id: number;
-  main: string;
-  description: string;
-  icon: string;
 }
