@@ -1,6 +1,6 @@
 import { API_KEY, BASE_URL } from '#shared';
 import { Axios, AxiosObservable } from 'axios-observable';
-import { ICityInfo, IGetCitiesResponse } from '../(interfaces)';
+import { ICityInfo, IGetCitiesResponse } from '../interfaces';
 
 // Эта апищка не описана на сайте, но намного удобнее, чем геокидинг
 // Есть крутая апишка one call, но увы она платная

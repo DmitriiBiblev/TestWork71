@@ -7,6 +7,13 @@
 
 .name {
   font-size: 24px;
+  color: #fff;
+  text-decoration: none;
+  transition: color .2s;
+
+  &:hover {
+    color: #4c1969;
+  }
 }
 
 .date {

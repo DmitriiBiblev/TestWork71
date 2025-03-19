@@ -3,8 +3,8 @@
 import cn from 'classnames';
 import React, { useEffect, useRef, useState } from 'react';
 import { Button, Form, FormGroup, InputGroup, ListGroup } from 'react-bootstrap';
-import { ICity } from '../../(interfaces)';
-import { useCitiesStore, useCityInfoStore } from '../../(stores)';
+import { ICity } from '../../interfaces';
+import { useCitiesStore, useCityInfoStore } from '../../stores';
 import { SearchEmpty } from './search-empty';
 import { SearchList } from './search-list';
 import { SearchLoader } from './search-loader';

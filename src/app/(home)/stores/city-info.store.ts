@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
 import { create } from 'zustand';
-import { ICityInfo } from '../(interfaces)';
-import { getCityInfo } from '../(services)';
+import { ICityInfo } from '../interfaces';
+import { getCityInfo } from '../services';
 
 interface State {
   isLoading: boolean;

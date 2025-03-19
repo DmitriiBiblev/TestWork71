@@ -1,8 +1,8 @@
 import { AxiosResponse } from 'axios';
 import { Subscription } from 'rxjs';
 import { create } from "zustand";
-import { ICity, IGetCitiesResponse } from '../(interfaces)';
-import { getCities } from '../(services)';
+import { ICity, IGetCitiesResponse } from '../interfaces';
+import { getCities } from '../services';
 
 interface State {
   isLoading: boolean;

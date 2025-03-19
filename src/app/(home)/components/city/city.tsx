@@ -2,9 +2,10 @@
 
 import { useFavorites } from '#shared';
 import { format, fromUnixTime } from 'date-fns';
+import Link from 'next/link';
 import React, { useEffect } from 'react';
 import { Alert, Button, Spinner } from 'react-bootstrap';
-import { useCityInfoStore } from '../../(stores)';
+import { useCityInfoStore } from '../../stores';
 import s from './city.module.scss';
 
 export const City = () => {
@@ -53,7 +54,9 @@ export const City = () => {
 
   return (
     <div className={ s.city }>
-      <div className={ s.name }>{ name }</div>
+      <Link className={ s.name } href={ `/forecast/${ cityInfo.id }` }>
+        { name }
+      </Link>
 
       <div className={ s.date }>{ date }</div>
 

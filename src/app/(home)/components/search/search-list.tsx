@@ -1,6 +1,6 @@
 import React from 'react';
 import { ListGroup } from 'react-bootstrap';
-import { ICity } from '../../(interfaces)';
+import { ICity } from '../../interfaces';
 import s from './search.module.scss';
 
 interface Props {
