@@ -1,4 +1,4 @@
-import { FavoriteList } from './(components)';
+import { FavoriteList } from './components';
 
 export default function Favorites() {
   return (
