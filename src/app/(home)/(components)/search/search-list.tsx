@@ -16,7 +16,13 @@ export const SearchList = ({ cities, onSelectCity }: Props) => {
       className={ s.lisItem }
       onClick={ () => onSelectCity(city) }
     >
-      { city.name }
+      <span>
+        { city.name }, { city.sys.country }
+      </span>
+
+      <span>
+        { Math.round(city.main.temp) }°C
+      </span>
     </ListGroup.Item>
   ));
 };

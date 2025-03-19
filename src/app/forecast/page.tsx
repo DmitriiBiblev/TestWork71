@@ -14,7 +14,7 @@ export default function Forecast() {
               </div>
 
               <div>
-                3&deg;C
+                3°C
               </div>
             </div>
           ))

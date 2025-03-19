@@ -24,7 +24,7 @@ export const FavoriteList = () => {
             </Link>
 
             <div className={ s.degrees }>
-              { degrees }&deg;C
+              { degrees }°C
             </div>
 
             <Button className={ s.btn }>

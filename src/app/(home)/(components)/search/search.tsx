@@ -4,17 +4,15 @@ import cn from 'classnames';
 import React, { useEffect, useRef, useState } from 'react';
 import { Button, Form, FormGroup, InputGroup, ListGroup } from 'react-bootstrap';
 import { ICity } from '../../(interfaces)';
-import { getCities } from '../../(services)';
+import { useCitiesStore, useCityInfoStore } from '../../(stores)';
 import { SearchEmpty } from './search-empty';
 import { SearchList } from './search-list';
 import { SearchLoader } from './search-loader';
 import s from './search.module.scss';
 
 export const Search = () => {
-  const [searchText, setSearchText] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [cities, setCities] = useState<ICity[]>([]);
+  const { isLoading, searchText, error, cities, setSearchText, getCities, destroy, reset } = useCitiesStore();
+  const { getCityInfo } = useCityInfoStore();
   const [isOpened, setIsOpened] = useState(false);
   const listRef = useRef<HTMLDivElement>(null);
 
@@ -27,37 +25,29 @@ export const Search = () => {
 
     document.addEventListener("mousedown", handleClickOutside);
 
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      destroy();
+    };
+  }, [destroy]);
 
   const handleSearchTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value: string = e.target.value;
-    const error: string = value.length < 2 ? "Enter at least 2 characters" : "";
-
-    setSearchText(value);
-    setError(error);
+    setSearchText(e.target.value);
     setIsOpened(false);
   };
 
   const handleGetCities = () => {
-    setIsLoading(true);
     setIsOpened(true);
 
-    getCities(searchText)
-      .then((cities: ICity[]) => setCities(cities))
-      .catch(() => {
-        setError('An unexpected error occurred');
-        setIsOpened(false);
-      })
-      .finally(() => setIsLoading(false));
+    if (cities.length) return;
+    getCities();
   };
 
-  const handleSelectCity = (city: ICity) => {
-    setSearchText("");
-    setCities([]);
+  const handleSelectCity = ({ id }: ICity) => {
     setIsOpened(false);
+    reset();
 
-    console.log(city);
+    getCityInfo(id);
   };
 
   const renderCityList = () => {
